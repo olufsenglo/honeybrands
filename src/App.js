@@ -1,14 +1,15 @@
-import logo from './logo.svg';
-import './App.css';
-import { Pages } from '../../Gosto-Template/src/components/pages/Pages';
+import React from "react"
+import { Pages } from "./components/pages/Pages"
 import "./style/main.scss"
+import { Provider } from "react-redux"
+import store from "./controller/store"
 
-function App() {
-    return ( 
-        <div className = "App" >
-            <Pages />
-        </div>
-    );
+export const App = () => {
+  return (
+    <>
+      <Provider store={store}>
+        <Pages />
+      </Provider>
+    </>
+  )
 }
-
-export default App;

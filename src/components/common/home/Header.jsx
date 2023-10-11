@@ -5,15 +5,26 @@ import { BiSearch } from "react-icons/bi"
 import { BsBagCheck } from "react-icons/bs"
 import { RiUser3Line } from "react-icons/ri"
 import { AiOutlineHeart, AiOutlineMenu, AiOutlineClose, AiOutlineDelete } from "react-icons/ai"
+import { connect, useDispatch, useSelector } from "react-redux"
 
 export const Header = () => {
   // navbar
   const [mobile, setMobile] = useState(false)
   // scroll navbar
+  const [cartList, setCartList] = useState(false)
+  const handleClose = () => {
+    setCartList(null)
+  }
+
   window.addEventListener("scroll", function () {
     const header = this.document.querySelector(".header")
     header.classList.toggle("active", this.window.scrollY > 100)
-  })  
+  }) 
+  
+  // cart add in shop
+  const getdata = useSelector((state) => state.cartReducer.carts)
+  console.log(getdata)
+  
   return (
     <>
       <header className='header'>
@@ -58,4 +69,9 @@ export const Header = () => {
     </>
   )
 }
-
+const mapStateToProps = (state) => {
+  return {
+    amount: state.amount,
+  }
+}
+connect(mapStateToProps)(Header)
