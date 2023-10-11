@@ -29,7 +29,14 @@ export const Header = () => {
           </nav>
           <div className='right'>
             
-            
+            <div className='right_search'>
+              <input type='text' placeholder='Search Products...' />
+              <BiSearch className='serachIcon heIcon' />
+            </div>
+            <div className='right_user'>
+              <RiUser3Line className='userIcon heIcon' />
+              <AiOutlineHeart className='userIcon heIcon' />
+            </div>
             
           </div>
         </div>
