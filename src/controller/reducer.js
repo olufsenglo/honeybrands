@@ -29,6 +29,16 @@ export const cartReducer = (state = initialStore, action) => {
         carts: data,
       }
 
+    case REMOVE_ITEM:
+      const itemIndex_desc = state.carts.findIndex((item) => item.id === action.payload.id)
+      if (state.carts[itemIndex_desc].qty >= 1) {
+        const delete_item = (state.carts[itemIndex_desc].qty -= 1)
+        console.log([...state.carts, delete_item])
+       
+      } else if (state.carts[itemIndex_desc].qty === 1) {
+        const data = state.carts.filter((el) => el.id !== action.payload.id)
+        
+      }
     default:
       return state
   }
