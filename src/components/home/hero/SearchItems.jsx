@@ -4,8 +4,6 @@ import { AiOutlineHeart } from "react-icons/ai"
 import { useDispatch } from "react-redux"
 import { ADD } from "../../../controller/action"
 
-// all copy past from productItem page
-
 export const SearchItems = ({ products, value, onSearch }) => {
   const dispatch = useDispatch()
   const addToCart = (e) => {
