@@ -19,7 +19,9 @@ export const Header = () => {
       <header className='header'>
         <div className='container'>
           <nav>
-            
+            <div className='toggle'>
+              <button onClick={() => setMobile(!mobile)}>{mobile ? <AiOutlineClose className='close heIcon' /> : <AiOutlineMenu className='open heIcon' />}</button>
+            </div>            
             <div className='left'>
               <Link to='/'>
                 <img src={logo} alt='logo' />
