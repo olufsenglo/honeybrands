@@ -6,7 +6,7 @@ import { SearchItems } from "./SearchItems"
 export const Hero = () => {
   // search
   const [value, setValue] = useState("")
-  const onChanage = (e) => {
+  const onChange = (e) => {
     setValue(e.target.value)
   }
 
@@ -31,7 +31,7 @@ export const Hero = () => {
           <div className='search'>
             <span>All Categories</span>
             <hr />
-            <input type='text' placeholder='Search Products...' onChange={onChanage} value={value} />
+            <input type='text' placeholder='Search Products...' onChange={onChange} value={value} />
             <button onClick={() => onSearch(value)}>
               <BiSearch className='serachIcon heIcon' />
             </button>
