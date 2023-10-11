@@ -62,6 +62,8 @@ export const Header = () => {
                 <BsBagCheck className='shop heIcon' />
                 MY CART<span> ({getdata.length})</span>
               </button>
+              <div className={cartList ? "showCart" : "hideCart"}>
+              </div>
               </div>
           </div>
         </div>
