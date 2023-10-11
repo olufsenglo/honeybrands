@@ -34,10 +34,16 @@ export const cartReducer = (state = initialStore, action) => {
       if (state.carts[itemIndex_desc].qty >= 1) {
         const delete_item = (state.carts[itemIndex_desc].qty -= 1)
         console.log([...state.carts, delete_item])
-       
+        return {
+          ...state,
+          carts: [...state.carts],
+        }
       } else if (state.carts[itemIndex_desc].qty === 1) {
         const data = state.carts.filter((el) => el.id !== action.payload.id)
-        
+        return {
+          ...state,
+          carts: data,
+        }
       }
     default:
       return state
